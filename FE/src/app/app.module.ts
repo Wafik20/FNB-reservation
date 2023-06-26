@@ -5,7 +5,7 @@ import {MatSlider, MatSliderModule} from '@angular/material/slider';
 
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +23,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { StartupComponent } from './components/startup/startup.component';
 import { TimeComponent } from './components/time/time.component';
 import { RoomviewComponent } from './components/roomview/roomview.component';
+
 
 
 
@@ -54,7 +55,9 @@ import { RoomviewComponent } from './components/roomview/roomview.component';
     MatButtonModule,
     MatSnackBarModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule,
 
   ],
   providers: [],

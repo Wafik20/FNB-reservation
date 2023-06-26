@@ -11,7 +11,7 @@ import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
   styleUrls: ['./splash.component.scss']
 })
 export class SplashComponent {
-  selectedValue!: string;
+  startTime!: string;
 
   times = [
     {value: 'eight-am', viewValue: '8am'},
@@ -38,7 +38,32 @@ export class SplashComponent {
 
   constructor(private _snackBar: MatSnackBar) {}
 
-  openSnackBar() {
+
+  // Variables for the form that include start date, name, time, and length
+  startDate = new Date();
+  name!: string;
+  date!: string;
+  length!: string;
+
+
+
+
+  Submit() {
     this._snackBar.open("Meeting reserved! 🎉", "Okay");
+
+    // Display the name, date, time, and length fields in the console
+    console.log(this.name);
+    console.log(this.date)
+    console.log(this.startTime)
+    console.log(this.length)
+
+    // If any of the fields are empty, display an error message
+    if (this.name == null || this.date == null || this.startTime == null || this.length == null) {
+      this._snackBar.open("Please fill out all fields", "Okay");
+    }
+    
+
+
+
   }
 }
