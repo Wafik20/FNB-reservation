@@ -33,7 +33,7 @@ public class ReservationService {
         User user = userService.getUser(
                 newReservation.getUser().getId());
         ReservationDate reservationDate = newReservation.getReservationDate();
-        if(!roomIsFreeForReservation(reservationDate, room)) {
+        if (!roomIsFreeForReservation(reservationDate, room)) {
             throw new InvalidReservationException("Room is not free for reservation");
         }
         Reservation reservationCreated = Reservation.builder()
@@ -45,10 +45,9 @@ public class ReservationService {
         return reservationCreated;
     }
 
-    //TODO: Implement this method using DateTimeHelper
     public boolean roomIsFreeForReservation(ReservationDate reservationDate, Room room) {
         List<Reservation> reservations = reservationRepository.findAllByRoom_Id(room.getId());
-        return true;
+        return !DateTimeHelper.reservationConflictExists(reservationDate, reservations);
     }
 
     public List<Reservation> getRoomSchedule(String roomId) {
