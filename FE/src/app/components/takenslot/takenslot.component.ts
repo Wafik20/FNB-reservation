@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-takenslot',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./takenslot.component.scss']
 })
 export class TakenslotComponent {
-
+  @Input() marker!: string;
 }

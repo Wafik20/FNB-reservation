@@ -7,5 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class CaltimeslotComponent {
   @Input() marker!: string;
-  @Input() taken!: string;
+
+  @Input() time!: string;
+
+  selected!: string;
 }
