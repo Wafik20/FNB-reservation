@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,4 +11,5 @@ import { FormBuilder } from '@angular/forms';
   ]
 })
 export class SplashModule {
+
  }

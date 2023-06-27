@@ -1,0 +1,59 @@
+<div class="container">
+  <ng-container *ngFor="let item of getRange(24); let i = index">
+
+
+    <div class="timegroup">
+      <div class="time">
+        <p>{{i}}</p>
+      </div>
+
+
+
+      <div class="slots">
+
+        <!-- x:00 -->
+        <div *ngIf="taken.includes(i + ':00'); else elseBlock">
+          <app-takenslot></app-takenslot>
+        </div>
+
+        <ng-template #elseBlock>
+          <app-caltimeslot></app-caltimeslot>
+        </ng-template>
+
+        <!-- X:15 -->
+        <div *ngIf="taken.includes(i + ':15'); else elseBlock1">
+          <app-takenslot></app-takenslot>
+        </div>
+
+        <ng-template #elseBlock1>
+          <app-caltimeslot></app-caltimeslot>
+        </ng-template>
+
+        <!-- X:30 -->
+        <div *ngIf="taken.includes(i + ':30'); else elseBlock2">
+          <app-takenslot></app-takenslot>
+        </div>
+
+        <ng-template #elseBlock2>
+          <app-caltimeslot></app-caltimeslot>
+        </ng-template>
+
+        <!-- X:45 -->
+        <div *ngIf="taken.includes(i + ':45'); else elseBlock3">
+          <app-takenslot></app-takenslot>
+        </div>
+
+        <ng-template #elseBlock3>
+          <app-caltimeslot></app-caltimeslot>
+        </ng-template>
+
+
+      </div>
+
+    </div>
+
+  </ng-container>
+
+
+
+</div>

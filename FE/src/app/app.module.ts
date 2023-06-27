@@ -5,7 +5,7 @@ import {MatSlider, MatSliderModule} from '@angular/material/slider';
 
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,7 +23,10 @@ import { DetailsComponent } from './components/details/details.component';
 import { StartupComponent } from './components/startup/startup.component';
 import { TimeComponent } from './components/time/time.component';
 import { RoomviewComponent } from './components/roomview/roomview.component';
-
+import { WeekdayComponent } from './components/weekday/weekday.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { CaltimeslotComponent } from './components/caltimeslot/caltimeslot.component';
+import { TakenslotComponent } from './components/takenslot/takenslot.component';
 
 
 
@@ -38,6 +41,10 @@ import { RoomviewComponent } from './components/roomview/roomview.component';
     StartupComponent,
     TimeComponent,
     RoomviewComponent,
+    WeekdayComponent,
+    CalendarComponent,
+    CaltimeslotComponent,
+    TakenslotComponent
 
 
   ],
@@ -55,9 +62,7 @@ import { RoomviewComponent } from './components/roomview/roomview.component';
     MatButtonModule,
     MatSnackBarModule,
     MatDatepickerModule,
-    MatNativeDateModule,
-    FormsModule,
-    ReactiveFormsModule,
+    MatNativeDateModule
 
   ],
   providers: [],
