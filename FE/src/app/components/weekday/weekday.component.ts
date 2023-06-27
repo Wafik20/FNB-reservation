@@ -13,12 +13,40 @@ export class WeekdayComponent {
   }
 
   // Matching the time to the input
-
-  time: string = '8:00';
-
+  selected: string = '7:30';
+  @Input() room!: string;
 
   @Input() date!: string;
 
 
-  taken: string[] = ["8:00", "8:15", "8:30", "8:45", "10:00", "10:15"];
+  isabella1 = {
+    taken: ["2:00", "2:15", "2:30", "2:45", "10:00", "10:15"],
+  }
+
+  isabella2 = {
+    taken: ["5:00", "5:15", "5:30"],
+  }
+
+  roomCheck(x: string): boolean {
+    switch (this.room) {
+      case "isabella1":
+        if(this.isabella1.taken.includes(x)) {
+          return true;
+        }
+        else return false;
+        break;
+
+      case "isabella2":
+        if(this.isabella2.taken.includes(x)) {
+          return true;
+        }
+        else return false;
+        break;
+
+      default:
+        return false;
+        break;
+    }
+
+  }
 }

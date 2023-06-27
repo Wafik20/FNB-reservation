@@ -12,7 +12,7 @@
       <div class="slots">
 
         <!-- x:00 -->
-        <div *ngIf="taken.includes(i + ':00'); else elseBlock">
+        <div *ngIf="roomCheck(i + ':00') == true; else elseBlock">
           <app-takenslot></app-takenslot>
         </div>
 
@@ -21,7 +21,7 @@
         </ng-template>
 
         <!-- X:15 -->
-        <div *ngIf="taken.includes(i + ':15'); else elseBlock1">
+        <div *ngIf="roomCheck(i + ':00') == true; else elseBlock1">
           <app-takenslot></app-takenslot>
         </div>
 
@@ -30,7 +30,7 @@
         </ng-template>
 
         <!-- X:30 -->
-        <div *ngIf="taken.includes(i + ':30'); else elseBlock2">
+        <div *ngIf="roomCheck(i + ':00') == true; else elseBlock2">
           <app-takenslot></app-takenslot>
         </div>
 
@@ -39,7 +39,7 @@
         </ng-template>
 
         <!-- X:45 -->
-        <div *ngIf="taken.includes(i + ':45'); else elseBlock3">
+        <div *ngIf="roomCheck(i + ':00') == true; else elseBlock3">
           <app-takenslot></app-takenslot>
         </div>
 
