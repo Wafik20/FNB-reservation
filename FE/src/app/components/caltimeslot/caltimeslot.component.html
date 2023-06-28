@@ -1,8 +1,7 @@
 <div class="container">
+  <!-- A button that, when clicked, calls a function that turns it orange and sends a variable upwards to the component that calls it -->
 
-  <button *ngIf="{marker} != null">{{marker}}</button>
-  <button *ngIf="{marker} == null"></button>
-
-
+  <!-- A blue button that turns orange when clicked on -->
+  <button class="btn btn-primary" (click)="toggleButton()" [ngClass]="{'btn-primary': !isClicked, 'btn-warning': isClicked}"></button>
 
 </div>

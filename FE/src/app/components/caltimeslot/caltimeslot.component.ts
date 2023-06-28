@@ -10,5 +10,17 @@ export class CaltimeslotComponent {
 
   @Input() time!: string;
 
-  selected!: string;
+  isClicked = false;
+
+  toggleButton() {
+    this.isClicked = !this.isClicked;
+  }
+  
+
+
+
 }
+
+
+
+

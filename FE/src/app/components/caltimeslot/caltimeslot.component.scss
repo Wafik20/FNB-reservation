@@ -3,11 +3,10 @@ p {
   height: 2rem;
   background-color: rgb(60, 207, 60);
 
-
   border: 2px solid black;
 
   color: white;
-  font-size: .8rem;
+  font-size: 0.8rem;
 
   &:hover {
     background-color: green;
@@ -25,7 +24,7 @@ button {
   border-right: 2px solid #283661;
 
   color: white;
-  font-size: .8rem;
+  font-size: 0.8rem;
 
   &:hover {
     background-color: #8b9bc7;
@@ -39,4 +38,12 @@ button {
 
 .taken {
   background-color: red;
+}
+
+.btn-primary {
+  background-color: #b9c0d3;
+}
+
+.btn-warning {
+  background-color: rgb(247, 203, 109);
 }
