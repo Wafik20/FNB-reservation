@@ -62,7 +62,7 @@ import { TakenslotComponent } from './components/takenslot/takenslot.component';
     MatButtonModule,
     MatSnackBarModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
 
   ],
   providers: [],

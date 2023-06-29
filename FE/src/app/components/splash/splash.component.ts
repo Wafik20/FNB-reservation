@@ -87,7 +87,12 @@ export class SplashComponent {
       }
 
       if (NotAvailable == false) {
-        this._snackBar.open("Available", "Okay");
+        this._snackBar.open("Room Reserved", "Okay");
+        
+        // In the future, this will send the data to the database
+        this.bookings.push({date: this.date, time: this.startTime, room: this.roomSelected});
+        console.log(this.bookings);
+        
       }
       else {
         this._snackBar.open("Unavailable", "Okay");
