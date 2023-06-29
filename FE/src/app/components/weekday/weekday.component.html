@@ -1,25 +1,18 @@
 <div class="container">
   <ng-container *ngFor="let item of getRange(14); let i = index">
-
-
     <div class="timegroup">
-
-
-
-
       <div class="slots">
-
         <!-- x:00 -->
-        <div *ngIf="roomCheck(i + ':00') == true; else elseBlock">
-          <app-takenslot marker="{{i+6}}"></app-takenslot>
+        <div *ngIf="roomCheck(i + 6 + ':00') == true; else elseBlock">
+          <app-takenslot marker="{{ i + 6 }}"></app-takenslot>
         </div>
 
         <ng-template #elseBlock>
-          <app-caltimeslot marker="{{i+6}}"></app-caltimeslot>
+          <app-caltimeslot marker="{{ i + 6 }}"></app-caltimeslot>
         </ng-template>
 
         <!-- X:15 -->
-        <div *ngIf="roomCheck(i + ':00') == true; else elseBlock1">
+        <div *ngIf="roomCheck(i + 6 + ':15') == true; else elseBlock1">
           <app-takenslot></app-takenslot>
         </div>
 
@@ -28,7 +21,7 @@
         </ng-template>
 
         <!-- X:30 -->
-        <div *ngIf="roomCheck(i + ':00') == true; else elseBlock2">
+        <div *ngIf="roomCheck(i + 6 + ':30') == true; else elseBlock2">
           <app-takenslot></app-takenslot>
         </div>
 
@@ -37,21 +30,14 @@
         </ng-template>
 
         <!-- X:45 -->
-        <div *ngIf="roomCheck(i + ':00') == true; else elseBlock3">
+        <div *ngIf="roomCheck(i + 6 + ':45') == true; else elseBlock3">
           <app-takenslot></app-takenslot>
         </div>
 
         <ng-template #elseBlock3>
           <app-caltimeslot></app-caltimeslot>
         </ng-template>
-
-
       </div>
-
     </div>
-
   </ng-container>
-
-
-
 </div>

@@ -20,11 +20,11 @@ export class WeekdayComponent {
 
 
   isabella1 = {
-    taken: ["2:00", "2:15", "2:30", "2:45", "10:00", "10:15"],
+    taken: ["6:00", "6:15", "7:30", "7:45", "11:00"],
   }
 
   isabella2 = {
-    taken: ["5:00", "5:15", "5:30"],
+    taken: ["9:00", "9:15", "10:30", "10:45", "11:00"],
   }
 
   roomCheck(x: string): boolean {
