@@ -19,27 +19,27 @@ export class WeekdayComponent {
   @Input() date!: string;
 
 
+  // Input of an object from the parent component
+  @Input() isabella1!: any;
+  @Input() isabella2!: any;
+
+  @Input() isabella1Array!: any;
+  @Input() isabella2Array!: any;
 
 
-  isabella1 = {
-    taken: ["6:00", "6:15", "7:30", "7:45", "11:00"],
-  }
 
-  isabella2 = {
-    taken: ["9:00", "9:15", "10:30", "10:45", "11:00"],
-  }
 
   roomCheck(x: string): boolean {
     switch (this.room) {
       case "isabella1":
-        if(this.isabella1.taken.includes(x)) {
+        if(this.isabella1Array.includes(x)) {
           return true;
         }
         else return false;
         break;
 
       case "isabella2":
-        if(this.isabella2.taken.includes(x)) {
+        if(this.isabella2Array.includes(x)) {
           return true;
         }
         else return false;
@@ -75,5 +75,6 @@ export class WeekdayComponent {
 
   sendTimes() {
     return this.selectedTimes;
+
   }
 }
