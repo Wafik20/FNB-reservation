@@ -4,7 +4,6 @@ p {
 
 .test {
   display: flex;
-
 }
 
 .container {
@@ -30,4 +29,8 @@ p {
   margin: auto;
 }
 
-
+.container {
+  margin: auto;
+  margin-top: 3rem;
+  width: fit-content;
+}

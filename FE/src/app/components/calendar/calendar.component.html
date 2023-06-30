@@ -1,40 +1,35 @@
-<div class="container">
+<div class="holder">
+  <div class="container">
+    <p>Isabella 1</p>
+    <app-weekday room="isabella1"></app-weekday>
 
-  <p>Isabella 1</p>
-  <app-weekday
-  room="isabella1"></app-weekday>
+    <p>Isabella 2</p>
+    <app-weekday room="isabella2"></app-weekday>
 
-  <p>Isabella 2</p>
-  <app-weekday
-  room="isabella2"></app-weekday>
+    <p>Isabella 3</p>
+    <app-weekday></app-weekday>
 
-  <p>Isabella 3</p>
-  <app-weekday></app-weekday>
+    <p>Glass 1</p>
+    <app-weekday></app-weekday>
 
-  <p>Glass 1</p>
-  <app-weekday></app-weekday>
+    <p>Glass 2</p>
+    <app-weekday></app-weekday>
 
-  <p>Glass 2</p>
-  <app-weekday></app-weekday>
-
-  <div class="arrows">
-    <p><---   ---></p>
-  </div>
-
-
-  <div class="buttons">
-
-
-    <div class="slider">
-      <mat-slider min=".5" max="2" step=".5" showTickMarks discrete>
-        <input matSliderThumb>
-      </mat-slider>
-      <p>Meeting length (hours)?</p>
+    <div class="arrows">
+      <p><--- ---></p>
     </div>
 
-    <div class="confirm">
-      <button>CONFIRM</button>
+    <div class="buttons">
+      <div class="slider">
+        <mat-slider min=".5" max="2" step=".5" showTickMarks discrete>
+          <input matSliderThumb />
+        </mat-slider>
+        <p>Meeting length (hours)?</p>
+      </div>
+
+      <div class="confirm">
+        <button>CONFIRM</button>
+      </div>
     </div>
   </div>
-
 </div>
