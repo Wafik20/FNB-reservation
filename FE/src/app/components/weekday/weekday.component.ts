@@ -70,7 +70,10 @@ export class WeekdayComponent {
       this.selectedTimes.push($time);
     }
 
-    console.log(this.selectedTimes);
   
+  }
+
+  sendTimes() {
+    return this.selectedTimes;
   }
 }
