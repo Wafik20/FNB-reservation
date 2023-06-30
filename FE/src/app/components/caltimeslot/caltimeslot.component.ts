@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-caltimeslot',
@@ -10,10 +11,16 @@ export class CaltimeslotComponent {
 
   @Input() time!: string;
 
+  // push a value to an array in the parent component
+  @Output() timeSelected = new EventEmitter<any>();
+
+
   isClicked = false;
 
   toggleButton() {
     this.isClicked = !this.isClicked;
+    this.timeSelected.emit(this.time);
+
   }
   
 

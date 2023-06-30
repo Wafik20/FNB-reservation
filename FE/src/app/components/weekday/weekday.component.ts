@@ -19,6 +19,8 @@ export class WeekdayComponent {
   @Input() date!: string;
 
 
+
+
   isabella1 = {
     taken: ["6:00", "6:15", "7:30", "7:45", "11:00"],
   }
@@ -48,5 +50,27 @@ export class WeekdayComponent {
         break;
     }
 
+  }
+
+  // Array of times that are selected
+  selectedTimes: string[] = [];
+
+  // Display the value from a child's event emitter to the console
+  logTime(time: string) {
+    console.log(time);
+  }
+
+  addTime($time: string) {
+
+    // If the time is already in the array, remove it
+    if (this.selectedTimes.includes($time)) {
+      this.selectedTimes.splice(this.selectedTimes.indexOf($time), 1);
+    }
+    else {
+      this.selectedTimes.push($time);
+    }
+
+    console.log(this.selectedTimes);
+  
   }
 }
