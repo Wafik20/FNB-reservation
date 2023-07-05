@@ -1,9 +1,10 @@
 <div class="holder">
   <div class="container">
+    <p>Date: {{date}}</p>
     <p>Isabella 1</p>
     <app-weekday
       room="isabella1"
-      isabella1Array="{{ isabella1 }}"
+      isabella1Array="{{ testIsa1 }}"
     ></app-weekday>
 
     <p>Isabella 2</p>
@@ -15,15 +16,17 @@
     </div>
 
     <div class="buttons">
-      <div class="slider">
-        <mat-slider min=".5" max="2" step=".5" showTickMarks discrete>
-          <input matSliderThumb />
-        </mat-slider>
-        <p>Meeting length (hours)?</p>
-      </div>
+      <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="date" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
 
       <div class="confirm">
-        <button class="btn btn-primary" (click)="getTimes()">Conf</button>
+        <button class="btn btn-primary" (click)="getReserved()">Conf</button>
       </div>
     </div>
   </div>
