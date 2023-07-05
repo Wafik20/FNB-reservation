@@ -1,11 +1,14 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, IterableDiffers, IterableDiffer, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-weekday',
   templateUrl: './weekday.component.html',
   styleUrls: ['./weekday.component.scss']
 })
-export class WeekdayComponent {
+export class WeekdayComponent implements OnChanges  {
+
+
 
 
   getRange(limit: number): number[] {
@@ -78,4 +81,33 @@ export class WeekdayComponent {
   sendRoom() {
     return this.room;
   }
+
+  @Output("refresh") refresh: EventEmitter<any> = new EventEmitter();
+
+  ngOnChanges(changes: SimpleChanges) {
+    const change = changes['date'];
+    this.refresh.emit();
+  }
+
+  refreshList(x: any[]) {
+
+
+
+    console.log("From week: " + x)
+
+    this.isabella1Array = x;
+    console.log("List: " + this.isabella1Array);
+
+    // for (let i = 0; i < x.length; i++) {
+    //   this.isabella1Array.push("1");
+    // }
+  }
+
+
+
+
+
+
 }
+
+

@@ -50,7 +50,9 @@ export class CalendarComponent {
   testIsa1 = ["",
   '8:00',
   '8:15',
-  '8:30'];
+  '8:30',
+  '11:00'
+  ];
 
   // This checks all reservations on a given date and room and pushes the reserved times to the test array
   // This data must be re-passed to the child upon changing the time or adding reservations
@@ -84,16 +86,6 @@ export class CalendarComponent {
     console.log(this.testIsa1);
   }
 
-  isabella1 = [
-    '7:00',
-    '7:15',
-    '7:30',
-    '7:45',
-    '8:00',
-    '8:15',
-    '8:30',
-  ];
-
   isabella2 = [
     '11:00',
     '11:15',
@@ -101,43 +93,39 @@ export class CalendarComponent {
     '11:45',
   ];
 
-  // Submits the date that the user chose (sends to API and gets availability for each room)
-  sendDate(): void {
-
-  }
-
   booking = {date: "", times: []}
+
+
 
   // Gets sends the times that the user selected
   getTimes(): void {
 
     // Calls the child components' "sendTimes" function, which returns the selected times
-    console.log("Response from child: " + this.child.sendTimes() + " in " + this.child.sendRoom());
     let timesArray = this.child.sendTimes();
 
-    console.log("Times array: " + timesArray);
-
     // It then pushes those values to the reservations array for the given room
+    this.booking.date = this.date;
 
     // For each of the selected times...
     for (let i = 0; i < timesArray.length; i++) {
 
-      // ...for each reservation date...
-      for (let x = 0; x < this.reservations.length; x++) {
-        const current = this.reservations[x];
-
-        // if the current one matches today's date...
-        if (current.date == this.date) {
-
-          // add the time to the array of booked times
-          current.times.push(timesArray[i]);
-        }
-        // Else create a new reservation with date and room
-        //
-
-      }
+      const time = timesArray[i];
+      console.log("Time: " + time);
     }
 
 
   }
+
+  pushTimes(): void {
+    const x = this.testIsa1
+    console.log("From cal: " + x)
+    this.child.refreshList(x);
+  }
+
+  availability() {
+    this.getTimes();
+    this.getReserved();
+    this.pushTimes();
+  }
 }
+
