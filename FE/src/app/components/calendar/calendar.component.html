@@ -5,6 +5,7 @@
     <app-weekday
       room="isabella1"
       isabella1Array="{{ testIsa1 }}"
+      date="{{date}}"
     ></app-weekday>
 
     <p>Isabella 2</p>
@@ -27,6 +28,8 @@
 
       <div class="confirm">
         <button class="btn btn-primary" (click)="getReserved()">Conf</button>
+        <button class="btn btn-primary" (click)="getTimes()">Times</button>
+
       </div>
     </div>
   </div>

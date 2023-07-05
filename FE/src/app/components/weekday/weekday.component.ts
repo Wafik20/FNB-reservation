@@ -55,13 +55,10 @@ export class WeekdayComponent {
   // Array of times that are selected
   selectedTimes: string[] = [];
 
-  // Display the value from a child's event emitter to the console
-  logTime(time: string) {
-    console.log(time);
-  }
 
+  // When a time is clicked, displays that value on the console- then adds it to the array of selected times
   addTime($time: string) {
-
+    console.log($time);
     // If the time is already in the array, remove it
     if (this.selectedTimes.includes($time)) {
       this.selectedTimes.splice(this.selectedTimes.indexOf($time), 1);
@@ -70,11 +67,15 @@ export class WeekdayComponent {
       this.selectedTimes.push($time);
     }
 
-  
+
   }
 
+  // Returns the selected times when called- used in the calendar component to add the selected times to the reserved times array
   sendTimes() {
     return this.selectedTimes;
+  }
 
+  sendRoom() {
+    return this.room;
   }
 }
