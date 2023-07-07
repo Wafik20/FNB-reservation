@@ -1,7 +1,11 @@
 <div class="holder">
 
+  <div class="error" *ngIf="date == null">
+    <p>PLEASE SELECT DATE</p>
+  </div>
   <!-- If date is null none of this shows- instead it will say "Please select a date" -->
   <div class="container">
+    <div class="content" *ngIf="date != null">
     <p>Date: {{date}}</p>
     <p>Isabella 1</p>
     <app-weekday
@@ -14,7 +18,7 @@
     <p>Isabella 2</p>
     <app-weekday room="testIsa2"
     isabella2Array="{{ isabella2 }}"></app-weekday>
-
+      </div>
     <!--  -->
     <div class="buttons">
       <mat-form-field>
